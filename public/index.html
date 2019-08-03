@@ -9,24 +9,35 @@
   </head>
   <body>
     <header>
-      <h1 class="title">This is no place for the weak or foolhardy.</h1>
+      <h1 class="title">This is no place for the weak or foolhardy</h1>
     </header>
     <section class="rules">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat фыафыа фыа фыа фыа фыапв явмтомилрнгд гшжд гшщж ьби иьа ек гекаио мит аФЫА ФЫВА ФЫА Ыа  ыа ФЫа фЫФа  cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
     </section>
-    <section class="items-list">
+    <section class="items">
 
     </section>
-    <div>
-      <ol id="participants" class="participants-list">
+    <section class="participants">
+      <button id="addParticipant" class="red">Add participant</button>
+      <ol id="participants">
       </ol>
-    </div>
+    </section>
     <!-- <img src="images/background.jpg" style="max-width: 100%"> -->
     
+    <div id="modal" class="modal">
+      <form autocomplete="off" id="addForm" class="add-form">
+        <input autocomplete="off" placeholder="name" name="name" type="text" required>
+        <input autocomplete="off" placeholder="score" name="score" type="number" required>
+        <input autocomplete="off" placeholder="number" name="number" type="text">
+        <input autocomplete="off" placeholder="email" name="email" type="email">
+        <button type="submit">Add</button>
+      </form>
+    </div>
+
     <!-- update the version number as needed -->
     <script src="/__/firebase/6.3.4/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -39,7 +50,7 @@
     <script src="/__/firebase/init.js"></script>
     
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      // document.addEventListener('DOMContentLoaded', function() {
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
         // // The Firebase SDK is initialized and available here!
         //
@@ -50,16 +61,18 @@
         //
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          console.info(`Firebase SDK loaded with ${features.join(', ')}`);
-        } catch (e) {
-          console.error(e);
-          console.error('Error loading the Firebase SDK, check the console.');
-        }
-      });
+      //   try {
+      //     let app = firebase.app();
+      //     let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+      //     console.info(`Firebase SDK loaded with ${features.join(', ')}`);
+      //   } catch (e) {
+      //     console.error(e);
+      //     console.error('Error loading the Firebase SDK, check the console.');
+      //   }
+      // });
     </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
     <script src="script.js"></script>
   </body>
