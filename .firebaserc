@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "darkest",
+    "darkest": "darkest-dungeon-96f5b"
+  }
+}
