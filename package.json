@@ -1,0 +1,22 @@
+{
+  "name": "darkestdungeon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init" : "firebase use --add",
+    "start": "firebase serve",
+    "deploy": "firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtiFisher/DarkestDungeon.git"
+  },
+  "author": "ArtiFisher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtiFisher/DarkestDungeon/issues"
+  },
+  "homepage": "https://github.com/ArtiFisher/DarkestDungeon#readme"
+}
