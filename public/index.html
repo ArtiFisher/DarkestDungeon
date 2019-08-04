@@ -14,7 +14,7 @@
     <section class="rules">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat фыафыа фыа фыа фыа фыапв явмтомилрнгд гшжд гшщж ьби иьа ек гекаио мит аФЫА ФЫВА ФЫА Ыа  ыа ФЫа фЫФа  cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat <span id="signIn">ASFS</span> фыа фыа фыа фыапв явмтомилрнгд гшжд гшщж ьби иьа ек гекаио мит аФЫА ФЫВА ФЫА Ыа  ыа ФЫа фЫФа  cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
     </section>
@@ -28,13 +28,25 @@
     </section>
     <!-- <img src="images/background.jpg" style="max-width: 100%"> -->
     
-    <div id="modal" class="modal">
-      <form autocomplete="off" id="addForm" class="add-form">
-        <input autocomplete="off" placeholder="name" name="name" type="text" required>
-        <input autocomplete="off" placeholder="score" name="score" type="number" required>
-        <input autocomplete="off" placeholder="number" name="number" type="text">
-        <input autocomplete="off" placeholder="email" name="email" type="email">
+    <div id="formContainer" class="modal">
+      <form autocomplete="off" id="addForm" class="form">
+        <span id="cancelForm" class="cancel">X</span>
+        <img src="favicon.ico">
+        <input autocomplete="off" placeholder="Name" name="name" type="text" required>
+        <input autocomplete="off" placeholder="Score" name="score" type="number" required>
+        <input autocomplete="off" placeholder="Phone" name="phone" type="text">
+        <input autocomplete="off" placeholder="Email" name="email" type="email">
         <button type="submit">Add</button>
+      </form>
+    </div>
+    
+    <div id="signInContainer" class="modal">
+      <form autocomplete="off" id="signInForm" class="form">
+        <span id="cancelSignIn" class="cancel">X</span>
+        <img src="favicon.ico">
+        <input autocomplete="off" placeholder="Name" name="name" type="text" required>
+        <input autocomplete="off" placeholder="Password" name="password" type="password" required>
+        <button type="submit">Sign In</button>
       </form>
     </div>
 
