@@ -56,7 +56,7 @@ header {
 }
 .form button {
   display: block;
-  width: 50px;
+  width: 65px;
   margin: 5px auto;
 }
 .modal {
@@ -71,7 +71,7 @@ header {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.7);
 }
-button.cancel {
+.cancel {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -92,6 +92,12 @@ button {
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
+  -moz-appearance: textfield;
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+/* .participants {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background_altar.jpg');
+  background-repeat: no-repeat;
+} */

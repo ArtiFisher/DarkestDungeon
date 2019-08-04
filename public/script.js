@@ -19,7 +19,7 @@ window.app = new (class App {
                 console.log(doc.id, " => ", doc.data());
                 var data = doc.data();
                 var listItem = document.createElement('li');
-                listItem.innerHTML = `<span>${data.name}</span><span>${data.score}</span>`;
+                listItem.innerHTML = `<span>${data.name}</span> - <span>${data.score}</span>`;
                 listFragment.appendChild(listItem);
             });
             participants.innerHTML ='';
