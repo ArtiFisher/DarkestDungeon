@@ -29,8 +29,18 @@ header {
 	font-size: 56px;
 	letter-spacing: 2px;
 	color: #cc0000;
-	/* text-shadow: 1px 1px 2px black, 0 0 1em red;	 */
+	text-shadow: 1px 1px 2px black, 0 0 1em red;
   font-family: "DwarvenAxe", "Comic Sans MS", cursive, sans-serif;
+  margin: 10px;
+}
+.rules {
+  margin: 10px;
+}
+.items {
+  margin: 10px;
+}
+.items img {
+  margin-left: 20px;
 }
 .form {
   position: relative;
