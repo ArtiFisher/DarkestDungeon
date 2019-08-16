@@ -29,7 +29,7 @@ header {
 	font-size: 56px;
 	letter-spacing: 2px;
 	color: #cc0000;
-	text-shadow: 1px 1px 2px black, 0 0 1em red;	
+	/* text-shadow: 1px 1px 2px black, 0 0 1em red;	 */
   font-family: "DwarvenAxe", "Comic Sans MS", cursive, sans-serif;
 }
 .form {
@@ -53,11 +53,29 @@ header {
   color: #cc0000;
   border: #cc0000 1px solid;
   outline: none;
+  font-size: 13px;
 }
 .form button {
   display: block;
   width: 65px;
   margin: 5px auto;
+}
+.form > fieldset {
+  width: 90%;
+  border: none;
+  margin: 5px auto;
+  font-size: 0;
+}
+.form fieldset input {
+  display: inline;
+  vertical-align: middle;
+  margin: 3px 0;
+  width: 40%;
+}
+img.heirloom {
+  display: inline;
+  vertical-align: middle;
+  width: 20px;
 }
 .modal {
   display: none;

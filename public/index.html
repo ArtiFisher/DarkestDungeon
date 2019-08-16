@@ -12,11 +12,8 @@
       <h1 class="title">This is no place for the weak or foolhardy</h1>
     </header>
     <section class="rules">
-      Lorem <span id="signIn">[CLICK ME]</span> ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat фыа фыа фыа фыапв явмтомилрнгд гшжд гшщж ьби иьа ек гекаио мит аФЫА ФЫВА ФЫА Ыа  ыа ФЫа фЫФа  cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam excepturi rem ab laboriosam repellat cum assumenda, tenetur alias quam modi aliquid deleniti! Deserunt nihil, explicabo quasi porro facilis officia molestiae.
+      Несчастье постигло наше <span id="signIn">имение</span>. Все наши ценности были разбросаны по округе или украдены жадными мародерами. Путник, если ты найдёшь хоть крупицу моего величия, принеси её сюда, заяви свои права на великую награду: книга с портретами (арт-бук) и милые фигурки (диорама) и другое, отважный искатель! 
+      Помни, что карточки с этими изображениями могут быть где угодно вокруг. Однако их число ограничено, потому поторопись! Про некоторые из них ходят слухи, возможно они помогут тебе в поисках. Ценнее всего для меня портреты, напоминающие о семье. А потом уж бюсты, письма из величественного прошлого. Ну и в самом конце - герба, их всегда в достатке.
     </section>
     <section class="items">
 
@@ -28,14 +25,23 @@
     </section>
     <!-- <img src="images/background.jpg" style="max-width: 100%"> -->
     
-    <div id="formContainer" class="modal">
+    <div id="formContainer" class="modal" style="display: block">
       <form autocomplete="off" id="addForm" class="form">
         <span id="cancelForm" class="cancel">X</span>
         <img src="favicon.ico">
         <input autocomplete="off" placeholder="Name" name="name" type="text" required>
-        <input autocomplete="off" placeholder="Score" name="score" type="number" required>
         <input autocomplete="off" placeholder="Phone" name="phone" type="text">
         <input autocomplete="off" placeholder="Email" name="email" type="email">
+        <fieldset>
+          <img class="heirloom" src="./images/heirlooms/Icon_Portrait.png" alt="Portraits">
+          <input autocomplete="off" placeholder="Portraits" name="portraits" type="number" required>
+          <img class="heirloom" src="./images/heirlooms/Icon_Bust.png" alt="Busts">
+          <input autocomplete="off" placeholder="Busts" name="busts" type="number" required>
+          <img class="heirloom" src="./images/heirlooms/Icon_Deed.png" alt="Deeds">
+          <input autocomplete="off" placeholder="Deeds" name="deeds" type="number" required>
+          <img class="heirloom" src="./images/heirlooms/Icon_Crest.png" alt="Crests">
+          <input autocomplete="off" placeholder="Crests" name="crests" type="number" required>
+        </fieldset>
         <button type="submit">Add</button>
       </form>
     </div>

@@ -13,13 +13,13 @@ window.app = new (class App {
     }
 
     drawList() {
-        firebase.firestore().collection("participants").orderBy("score", "desc").get().then(function(querySnapshot) {
+        firebase.firestore().collection("participants").get().then(function(querySnapshot) {
             var listFragment = document.createDocumentFragment();
             querySnapshot.forEach(function(doc) {
                 console.log(doc.id, " => ", doc.data());
                 var data = doc.data();
                 var listItem = document.createElement('li');
-                listItem.innerHTML = `<span>${data.name}</span> - <span>${data.score}</span>`;
+                listItem.innerHTML = `<span>${data.name}</span> - <img class="heirloom" src="./images/heirlooms/Icon_Portrait.png" alt="Portraits"><span>${data.heirlooms.portraits}</span> <img class="heirloom" src="./images/heirlooms/Icon_Bust.png" alt="Busts"><span>${data.heirlooms.busts}</span> <img class="heirloom" src="./images/heirlooms/Icon_Deed.png" alt="Deeds"><span>${data.heirlooms.deeds}</span> <img class="heirloom" src="./images/heirlooms/Icon_Crest.png" alt="Crests"><span>${data.heirlooms.crests}</span>`;
                 listFragment.appendChild(listItem);
             });
             participants.innerHTML ='';
@@ -64,9 +64,14 @@ window.app = new (class App {
         var values = this.addInputs.map(({value}) => value);
         firebase.firestore().collection("participants").add({
             name: values[0],
-            score: parseFloat(values[1]),
-            phone: values[2],
-            email: values[3]
+            phone: values[1],
+            email: values[2],
+            heirlooms: {
+                portraits: parseInt(values[3], 10),
+                busts: parseInt(values[4], 10),
+                deeds: parseInt(values[5], 10),
+                crests: parseInt(values[6], 10),
+            },
         })
             .then(() => console.info("Added", values))
             .catch(console.error);
