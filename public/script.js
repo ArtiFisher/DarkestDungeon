@@ -9,6 +9,7 @@ window.app = new (class App {
         signIn.addEventListener('click', () => this.getCurrentUser() ? this.signOut() : this.openSignIn());
         cancelSignIn.addEventListener('click', () => this.closeSignIn());
         addForm.addEventListener('submit', event => this.submitForm(event));
+        addGossipForm.addEventListener('submit', event => this.submitGossipForm(event));
         signInForm.addEventListener('submit', event => this.submitSignIn(event));
         participants.addEventListener('click', event => {
             var id = event.target.dataset.participantid;
@@ -110,12 +111,12 @@ window.app = new (class App {
         this.closeSignIn();
     }
 
-    openGossipForm = () => {
+    openGossipForm() {
         addGossipContainer.style.display = 'block';
     }
     closeGossipForm() {
         addGossipInput.value = '';
-        gossipFormContainer.style.display = 'none';
+        addGossipContainer.style.display = 'none';
     }
     submitGossipForm(event) {
         event.preventDefault();
