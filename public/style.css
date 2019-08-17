@@ -9,9 +9,6 @@
   url("fonts/dwarven-axe/dwarvenAxe.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 }
 
-@media handheld {
-}
-
 body {
   background: black;
   color: #cc0000;
@@ -45,6 +42,9 @@ section {
 ol {
   padding-inline-start: 25px;
 }
+.delete {
+  display: none;
+}
 
 @media (max-width: 600px) {
   .items img {
@@ -64,7 +64,7 @@ ol {
 	width: 40px;
 	margin: auto;
 }
-.form input {
+.form input, textarea {
   display: block;
   margin: 5px auto;
   padding: 4px 0;
@@ -114,6 +114,9 @@ img.heirloom {
   top: 5px;
   right: 5px;
   cursor: pointer;
+}
+.admin .delete {
+  display: initial;
 }
 
 button {

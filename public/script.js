@@ -5,7 +5,7 @@ window.app = new (class App {
         addParticipant.addEventListener('click', () => this.openForm());
         addGossip.addEventListener('click', () => this.openGossipForm());
         cancelForm.addEventListener('click', () => this.closeForm());
-        cancelAddGossip.addEventListener('click', () => this.closeForm());
+        cancelAddGossip.addEventListener('click', () => this.closeGossipForm());
         signIn.addEventListener('click', () => this.getCurrentUser() ? this.signOut() : this.openSignIn());
         cancelSignIn.addEventListener('click', () => this.closeSignIn());
         addForm.addEventListener('submit', event => this.submitForm(event));
@@ -33,6 +33,7 @@ window.app = new (class App {
             const newDisplayValue = user ? '' : 'none'; 
             addParticipant.style.display = newDisplayValue;
             addGossip.style.display = newDisplayValue;
+            user ? document.body.classList.add('admin') : document.body.classList.remove('admin');
         });
         this.addInputs = Array.from(addForm.elements).filter(elem => elem.localName == 'input');
         this.signInInputs = Array.from(signInForm.elements).filter(elem => elem.localName == 'input');
@@ -63,7 +64,7 @@ window.app = new (class App {
             results.sort((participantA, participantB) => participantB.score - participantA.score)
                 .forEach(function(participant) {
                     var listItem = document.createElement('li');
-                    listItem.innerHTML = `<span>${participant.name}</span> - <span>${participant.score}</span> - <img class="heirloom" src="./images/heirlooms/Icon_Portrait.png" alt="Portraits"><span>${participant.portraits}</span> <img class="heirloom" src="./images/heirlooms/Icon_Bust.png" alt="Busts"><span>${participant.busts}</span> <img class="heirloom" src="./images/heirlooms/Icon_Deed.png" alt="Deeds"><span>${participant.deeds}</span> <img class="heirloom" src="./images/heirlooms/Icon_Crest.png" alt="Crests"><span>${participant.crests}</span><span data-participantId=${participant.id}>X</span>`;
+                    listItem.innerHTML = `<span>${participant.name}</span> - <span>${participant.score}</span> - <img class="heirloom" src="./images/heirlooms/Icon_Portrait.png" alt="Portraits"><span>${participant.portraits}</span> <img class="heirloom" src="./images/heirlooms/Icon_Bust.png" alt="Busts"><span>${participant.busts}</span> <img class="heirloom" src="./images/heirlooms/Icon_Deed.png" alt="Deeds"><span>${participant.deeds}</span> <img class="heirloom" src="./images/heirlooms/Icon_Crest.png" alt="Crests"><span>${participant.crests}</span><span class="delete" data-participantId=${participant.id}>X</span>`;
                     listFragment.appendChild(listItem);
                 });
             participants.innerHTML ='';
@@ -78,7 +79,7 @@ window.app = new (class App {
                 console.log(doc.id, " => ", doc.data());
                 var data = doc.data();
                 var listItem = document.createElement('li');
-                listItem.innerHTML = `<span>${data.msg}</span> <span data-gossipId="${doc.id}">X</span>`;
+                listItem.innerHTML = `<span>${data.msg}</span> <span class="delete" data-gossipId="${doc.id}">X</span>`;
                 listFragment.appendChild(listItem);
             })
             gossips.innerHTML = '';
