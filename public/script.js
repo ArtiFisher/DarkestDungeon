@@ -15,11 +15,23 @@ window.app = new (class App {
     drawList() {
         firebase.firestore().collection("participants").get().then(function(querySnapshot) {
             var listFragment = document.createDocumentFragment();
+            var results = [];
             querySnapshot.forEach(function(doc) {
                 console.log(doc.id, " => ", doc.data());
                 var data = doc.data();
+                results.push({
+                    name: data.name,
+                    portraits: data.heirlooms.portraits,
+                    busts: data.heirlooms.busts,
+                    deeds: data.heirlooms.deeds,
+                    crests: data.heirlooms.crests,
+                    score: data.heirlooms.portraits * 4 + data.heirlooms.busts * 3 + data.heirlooms.deeds * 2 + data.heirlooms.crests * 1,
+                })
+            })
+            results.sort((participantA, participantB) => participantB.score - participantA.score)
+            .forEach(function(participant) {
                 var listItem = document.createElement('li');
-                listItem.innerHTML = `<span>${data.name}</span> - <img class="heirloom" src="./images/heirlooms/Icon_Portrait.png" alt="Portraits"><span>${data.heirlooms.portraits}</span> <img class="heirloom" src="./images/heirlooms/Icon_Bust.png" alt="Busts"><span>${data.heirlooms.busts}</span> <img class="heirloom" src="./images/heirlooms/Icon_Deed.png" alt="Deeds"><span>${data.heirlooms.deeds}</span> <img class="heirloom" src="./images/heirlooms/Icon_Crest.png" alt="Crests"><span>${data.heirlooms.crests}</span>`;
+                listItem.innerHTML = `<span>${participant.name}</span> - <span>${participant.score}</span> - <img class="heirloom" src="./images/heirlooms/Icon_Portrait.png" alt="Portraits"><span>${participant.portraits}</span> <img class="heirloom" src="./images/heirlooms/Icon_Bust.png" alt="Busts"><span>${participant.busts}</span> <img class="heirloom" src="./images/heirlooms/Icon_Deed.png" alt="Deeds"><span>${participant.deeds}</span> <img class="heirloom" src="./images/heirlooms/Icon_Crest.png" alt="Crests"><span>${participant.crests}</span>`;
                 listFragment.appendChild(listItem);
             });
             participants.innerHTML ='';

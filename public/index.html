@@ -25,7 +25,7 @@
         Про некоторые из них ходят слухи, возможно они помогут тебе в поисках. 
     </section>
     <section class="participants">
-      <button id="addParticipant" class="red" style="display: none">Add participant</button>
+      <button id="addParticipant" class="red" style="display: none">Добавить героя</button>
       <ol id="participants">
       </ol>
     </section>
@@ -36,17 +36,17 @@
         <span id="cancelForm" class="cancel">X</span>
         <img src="favicon.ico">
         <input autocomplete="off" placeholder="Name" name="name" type="text" required>
-        <input autocomplete="off" placeholder="Phone" name="phone" type="text">
+        <input autocomplete="off" placeholder="Phone" name="phone" type="tel">
         <input autocomplete="off" placeholder="Email" name="email" type="email">
         <fieldset>
           <img class="heirloom" src="./images/heirlooms/Icon_Portrait.png" alt="Portraits">
-          <input autocomplete="off" placeholder="Portraits" name="portraits" type="number" required>
+          <input autocomplete="off" placeholder="Portraits" name="portraits" type="number" value="0" required>
           <img class="heirloom" src="./images/heirlooms/Icon_Bust.png" alt="Busts">
-          <input autocomplete="off" placeholder="Busts" name="busts" type="number" required>
+          <input autocomplete="off" placeholder="Busts" name="busts" type="number" value="0" required>
           <img class="heirloom" src="./images/heirlooms/Icon_Deed.png" alt="Deeds">
-          <input autocomplete="off" placeholder="Deeds" name="deeds" type="number" required>
+          <input autocomplete="off" placeholder="Deeds" name="deeds" type="number" value="0" required>
           <img class="heirloom" src="./images/heirlooms/Icon_Crest.png" alt="Crests">
-          <input autocomplete="off" placeholder="Crests" name="crests" type="number" required>
+          <input autocomplete="off" placeholder="Crests" name="crests" type="number" value="0" required>
         </fieldset>
         <button type="submit">Add</button>
       </form>
