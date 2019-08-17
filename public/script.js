@@ -1,25 +1,33 @@
 window.app = new (class App {
     constructor() {
-        this.drawList();
+        this.renderHeroesList();
+        this.renderGossips();
         addParticipant.addEventListener('click', () => this.openForm());
         cancelForm.addEventListener('click', () => this.closeForm());
         signIn.addEventListener('click', () => this.getCurrentUser() ? this.signOut() : this.openSignIn());
         cancelSignIn.addEventListener('click', () => this.closeSignIn());
         addForm.addEventListener('submit', (event) => this.submitForm(event));
         signInForm.addEventListener('submit', (event) => this.submitSignIn(event));
-        firebase.auth().onAuthStateChanged((user) => addParticipant.style.display = user ? '' : 'none');
+        firebase.auth().onAuthStateChanged((user) => {
+            const newDisplayValue = user ? '' : 'none'; 
+            addParticipant.style.display = newDisplayValue;
+            addGossip.style.display = newDisplayValue;
+        });
         this.addInputs = Array.from(addForm.elements).filter(elem => elem.localName == 'input');
         this.signInInputs = Array.from(signInForm.elements).filter(elem => elem.localName == 'input');
     }
 
-    drawList() {
-        firebase.firestore().collection("participants").get().then(function(querySnapshot) {
+    renderHeroesList() {
+        const App = this;
+        firebase.firestore().collection("participants").get().then(querySnapshot => {
             var listFragment = document.createDocumentFragment();
             var results = [];
-            querySnapshot.forEach(function(doc) {
+            querySnapshot.forEach(doc => {
                 console.log(doc.id, " => ", doc.data());
+                console.log(App);
                 var data = doc.data();
                 results.push({
+                    id: doc.id,
                     name: data.name,
                     portraits: data.heirlooms.portraits,
                     busts: data.heirlooms.busts,
@@ -34,8 +42,24 @@ window.app = new (class App {
                 listItem.innerHTML = `<span>${participant.name}</span> - <span>${participant.score}</span> - <img class="heirloom" src="./images/heirlooms/Icon_Portrait.png" alt="Portraits"><span>${participant.portraits}</span> <img class="heirloom" src="./images/heirlooms/Icon_Bust.png" alt="Busts"><span>${participant.busts}</span> <img class="heirloom" src="./images/heirlooms/Icon_Deed.png" alt="Deeds"><span>${participant.deeds}</span> <img class="heirloom" src="./images/heirlooms/Icon_Crest.png" alt="Crests"><span>${participant.crests}</span>`;
                 listFragment.appendChild(listItem);
             });
+            App.participants = results;
             participants.innerHTML ='';
             participants.appendChild(listFragment);
+        })
+    }
+
+    renderGossips() {
+        firebase.firestore().collection("gossips").get().then(function(querySnapshot) {
+            var listFragment = document.createDocumentFragment();
+            querySnapshot.forEach(function(doc) {
+                console.log(doc.id, " => ", doc.data());
+                var data = doc.data();
+                var listItem = document.createElement('li');
+                listItem.innerHTML = `<span>${data.msg}</span> <span id="${doc.id}">X</span>`;
+                listFragment.appendChild(listItem);
+            })
+            gossips.innerHTML ='';
+            gossips.appendChild(listFragment);
         })
     }
 
