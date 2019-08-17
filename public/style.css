@@ -31,17 +31,27 @@ header {
 	color: #cc0000;
 	text-shadow: 1px 1px 2px black, 0 0 1em red;
   font-family: "DwarvenAxe", "Comic Sans MS", cursive, sans-serif;
-  margin: 10px;
+  margin: 2%;
 }
-.rules {
-  margin: 10px;
+section {
+  margin: 2%;
 }
 .items {
-  margin: 10px;
+  margin-left: 2%;
 }
 .items img {
-  margin-left: 20px;
+  margin-right: 3%;
 }
+ol {
+  padding-inline-start: 25px;
+}
+
+@media (max-width: 600px) {
+  .items img {
+    width: 20%;
+  }
+}
+
 .form {
   position: relative;
   margin: 100px auto 16px;
