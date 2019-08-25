@@ -1,34 +1,59 @@
-@font-face {
+/* @font-face {
   font-family: Bloody;
   src: url(fonts/bloody.otf);
-}
+} */
 @font-face {
   font-family: DwarvenAxe;
   src: url("fonts/dwarven-axe/dwarvenAxe.woff2") format("woff2"), /* chrome、firefox */
   url("fonts/dwarven-axe/dwarvenAxe.woff") format("woff"), /* chrome、firefox */
   url("fonts/dwarven-axe/dwarvenAxe.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 }
+@font-face {
+  font-family: Mason;
+  src: url("fonts/mason.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
 
 body {
-  background: black;
-  color: #cc0000;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #9a0000;
+  font-family: "Mason", cursive, sans-serif;
+	font-size: 20px;
   margin: 0;
   padding: 0;
+  border: 0;
+}
+.bg-image {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  background-image: url(images/background_hamlet.svg);
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  height: 110%;
+  width: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 header {
-  background: black;
   margin: auto;
   text-align: center;
+}
+header .torch {
+  width: 40%;
+  /* height: 10%; */
 }
 .title {
 	/* font-weight: bold; */
 	font-size: 56px;
 	letter-spacing: 2px;
-	color: #cc0000;
+	color: #9a0000;
 	text-shadow: 1px 1px 2px black, 0 0 1em red;
   font-family: "DwarvenAxe", "Comic Sans MS", cursive, sans-serif;
-  margin: 2%;
+  margin: 0 2%;
+}
+h2 {
+	font-size: 30px;
 }
 section {
   margin: 2%;
@@ -44,6 +69,7 @@ ol {
 }
 .delete {
   display: none;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -55,7 +81,7 @@ ol {
 .form {
   position: relative;
   margin: 100px auto 16px;
-  border: #cc0000 1px solid;
+  border: #9a0000 1px solid;
   width: 250px;
   background: black;
 }
@@ -70,8 +96,8 @@ ol {
   padding: 4px 0;
   width: 90%;
   background: black;
-  color: #cc0000;
-  border: #cc0000 1px solid;
+  color: #9a0000;
+  border: #9a0000 1px solid;
   outline: none;
   font-size: 13px;
 }
@@ -122,8 +148,8 @@ img.heirloom {
 button {
   color: #444444;
   background: black;
-  color: #cc0000;
-  border: #cc0000 1px solid;
+  color: #9a0000;
+  border: #9a0000 1px solid;
   padding: 5px 10px;
   border-radius: 2px;
   font-weight: bold;
