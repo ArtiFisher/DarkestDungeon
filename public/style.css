@@ -43,7 +43,7 @@ header .torch {
 }
 .title {
 	/* font-weight: bold; */
-	font-size: 150%;
+	font-size: 200%;
 	letter-spacing: 2px;
 	color: #790000;
 	text-shadow: 1px 1px 2px #020000, 0 0 1em #000000;
@@ -71,6 +71,9 @@ ol {
 }
 
 @media (max-width: 600px) {
+  .title {
+    font-size: 150%;
+  }
   .items img {
     width: 20%;
   }
